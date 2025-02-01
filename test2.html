@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tree Test</title>
+<style>
+  .branch {
+    margin-left: 20px; /* Indentation for sub-items */
+    display: none; /* Initially hidden */
+  }
+  .item {
+      cursor: pointer; /* Make top level clickable */
+  }
+</style>
+</head>
+<body>
+
+  <h1>Website Information Architecture Test</h1>
+
+  <div class="item" onclick="toggleBranch(this)">Shukatsu</div>
+  <div class="branch">
+    <div class="item">IT</div>
+    <div class="item">Finance</div>
+    <div class="item" onclick="toggleBranch(this)">Subcategory 1.3</div>
+    <div class="branch">
+        <div class="item">Sub-subcategory 1.3.1</div>
+        <div class="item">Sub-subcategory 1.3.2</div>
+    </div>
+  </div>
+
+  <div class="item" onclick="toggleBranch(this)">Top Level Category 2</div>
+  <div class="branch">
+    <div class="item">Subcategory 2.1</div>
+    <div class="item">Subcategory 2.2</div>
+  </div>
+
+  <div class="item">Top Level Category 3</div>  <script>
+    function toggleBranch(element) {
+      const branch = element.nextElementSibling; // Get the next sibling (the branch)
+      if (branch && branch.classList.contains('branch')) {
+        branch.style.display = (branch.style.display === 'block') ? 'none' : 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
