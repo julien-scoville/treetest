@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tree Test</title>
+<style>
+  .branch {
+    margin-left: 20px; /* Indentation for sub-items */
+    display: none; /* Initially hidden */
+  }
+
+
+   body div.item {
+            cursor: pointer; /* Default cursor */
+        }
+
+  body.grabbing .item {
+            cursor: grabbing; /* Cursor while clicking */
+        }
+  body {
+    font-size: 20px;
+  }
+
+
+</style>
+</head>
+<body>
+
+
+  <div class="item" onclick="toggleBranch(this)">業界</div>
+  <div class="branch">
+    <div class="item">IT・通信</div>
+    <div class="item">金融</div>
+    <div class="item">コンサル・シンクタンク</div>
+    <div class="item">広告・マスコミ</div>
+
+
+  </div>
+  <div class="item" onclick="toggleBranch(this)">対策</div>
+  <div class="branch">
+    <div class="item">ES対策</div>
+    <div class="item" onclick="toggleBranch(this)">面接の不安</div>
+    <div class="branch">
+       <div class="item">面接対策</div>
+       <div class="item">GD対策</div>
+       <div class="item">模擬面接</div>
+       <div class="item">印象力アップ</div>
+     </div>
+   <div class="item">業界・企業研究</div>
+   <div class="item">内定戦略</div>
+   <div class="item">就活スケジュール管理</div>
+   <div class="item">就活スケジュール管理</div>
+  </div>
+
+  <div class="item" onclick="toggleBranch(this)">会社</div>
+  <div class="branch">
+    <div class="item" onclick="toggleBranch(this)">企業規模</div>
+    <div class="branch">
+        <div class="item">大企業</div>
+        <div class="item">中堅企業</div>
+         <div class="item">中小企業</div>
+    </div>
+    <div class="item" onclick="toggleBranch(this)">会社名</div>
+    <div class="branch">
+       <div class="item">トヨタ</div>
+       <div class="item">楽天</div>
+       <div class="item">ソフトバンク</div>
+       <div class="item">Sony</div>
+       <div class="item">ヤマハ発動機</div> 
+    </div>
+  </div>
+  <div class="item" onclick="toggleBranch(this)">エントリー・応募</div>
+     <div class="branch">
+       <div class="item" onclick="toggleBranch(this)">自己分析</div>
+       <div class="branch">
+        <div class="item">適性診断</div> 
+        <div class="item">キャリアの方向性決定</div> 
+        <div class="item">業界・企業研究</div> 
+        <div class="item">自己PR作成</div> 
+        <div class="item">志望動機作成</div> 
+      </div>
+      <div class="item" onclick="toggleBranch(this)">情報収集</div>
+      <div class="branch">
+        <div class="item">就活イベント</div> 
+        <div class="item">合同説明会</div> 
+        <div class="item">OB・OG訪問</div> 
+        <div class="item">自己PR作成</div> 
+        <div class="item">インターンシップ</div> 
+      </div>
+      <div class="item" onclick="toggleBranch(this)">エントリー・応募</div>
+      <div class="branch">
+        <div class="item">エントリーシート作成</div> 
+        <div class="item">履歴書作成</div> 
+        <div class="item">職務経歴書作成</div> 
+        <div class="item">企業エントリー</div> 
+      </div>
+      <div class="item" onclick="toggleBranch(this)">選考</div>
+      <div class="branch">
+        <div class="item">筆記試験</div> 
+        <div class="item">グループディスカッション</div> 
+        <div class="item">一次面接</div> 
+        <div class="item">二次面接</div> 
+        <div class="item">最終面接</div> 
+      </div>
+      <div class="item" onclick="toggleBranch(this)">内定・入社準備</div>
+      <div class="branch">
+        <div class="item">内定獲得</div> 
+        <div class="item">内定者研修</div> 
+        <div class="item">入社手続き</div> 
+        <div class="item">ビジネスマナー研修</div> 
+      </div>
+
+
+
+       
+     </div>
+     <div class="item" onclick="toggleBranch(this)">イベントタイプ</div>
+     <div class="branch">
+      <div class="item">合同企業説明会</div> 
+      <div class="item">企業単独説明会</div> 
+      <div class="item">インターンシップ</div> 
+      <div class="item">OB・OG訪問</div> 
+      <div class="item">選考直結イベント</div> 
+      <div class="item">仕事体験会</div> 
+      <div class="item">キャリア相談会</div> 
+      <div class="item">模擬面接会</div> 
+      <div class="item">グループディスカッション対策会</div> 
+      <div class="item">会社説明会</div> 
+      <div class="item">座談会</div> 
+      <div class="item">企業交流会</div> 
+      <div class="item">合宿型選考</div> 
+      <div class="item">早期選考会</div> 
+     </div>
+     <div class="item" onclick="toggleBranch(this)">会場</div>
+  <div class="branch">
+    <div class="item">オンライン</div>
+    <div class="item">東京開催</div>
+    <div class="item">大阪開催</div>
+  </div>
+<div class="item" onclick="toggleBranch(this)">求人名</div>
+    <div class="branch">
+    <div class="item">エンジニア</div>
+    <div class="item">事務職</div>
+    <div class="item">総合職</div>
+    <div class="item">コンサルタント</div>
+    <div class="item">マーケティング担当</div>
+  </div>
+
+
+  <script>
+    function toggleBranch(element) {
+      const branch = element.nextElementSibling; // Get the next sibling (the branch)
+      if (branch && branch.classList.contains('branch')) {
+        branch.style.display = (branch.style.display === 'block') ? 'none' : 'block';
+      }
+    }
+
+     document.body.addEventListener('mousedown', function() {
+      console.log("mousedown");
+            document.body.classList.add('grabbing');
+        });
+
+        // Add mouseup event listener to revert back to the default cursor
+        document.body.addEventListener('mouseup', function() {
+          console.log("mouseup");
+            document.body.classList.remove('grabbing');
+        });
+
+          /* .item {
+      cursor: pointer; 
+  }*/
+  </script>
+
+</body>
+</html>
