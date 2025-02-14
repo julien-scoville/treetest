@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tree Test</title>
+<style>
+  .branch {
+    margin-left: 20px; /* Indentation for sub-items */
+    display: none; /* Initially hidden */
+  }
+
+
+   body div.item {
+            cursor: pointer; /* Default cursor */
+        }
+
+  body.grabbing .item {
+            cursor: grabbing; /* Cursor while clicking */
+        }
+  body {
+    font-size: 20px;
+  }
+
+
+</style>
+</head>
+<body>
+
+<!-- Industry & Company -->
+  <div class="item" onclick="toggleBranch(this)">業界・企業検索</div>
+  <div class="branch">
+    <div class="item"onclick="toggleBranch(this)">業界</div>
+    <div class="branch">
+      <div class="item">総合商社</div>
+      <div class="item">大手</div>
+      <div class="item">外資系</div>
+      <div class="item">デベロッパー</div>
+      <div class="item">IT</div>
+      <div class="item">小売・サービス</div>
+      <div class="item">広告</div>
+      <div class="item">インフラ</div>
+      <div class="item">メーカー</div>
+      <div class="item">ベンチャー</div>
+    </div>
+    <div class="item">合同企業説明会</div>
+    <div class="item">業界情報の記事</div>
+    <div class="item">会社名検索</div>
+  </div>
+
+<!-- Students currently in Shukatsu -->
+  <div class="item" onclick="toggleBranch(this)">就活対策</div>
+  <div class="branch">
+    <div class="item">キャリア面談</div>
+    <div class="item">自己分析</div>
+    <div class="item">ES対策</div>
+    <div class="item" >面接対策</div>
+     <div class="item">GD対策</div>
+     <div class="item">OB・OG訪問</div>
+  </div>
+
+  <div class="item" onclick="toggleBranch(this)">選考申込み</div>
+  <div class="branch">
+     <div class="item">個別企業説明会</div>
+    <div class="item">インターンシップ</div>
+    <div class="item">本選考</div>
+  </div>
+
+    
+
+
+
+  <script>
+    function toggleBranch(element) {
+      const branch = element.nextElementSibling; // Get the next sibling (the branch)
+      if (branch && branch.classList.contains('branch')) {
+        branch.style.display = (branch.style.display === 'block') ? 'none' : 'block';
+      }
+    }
+
+     document.body.addEventListener('mousedown', function() {
+      console.log("mousedown");
+            document.body.classList.add('grabbing');
+        });
+
+        // Add mouseup event listener to revert back to the default cursor
+        document.body.addEventListener('mouseup', function() {
+          console.log("mouseup");
+            document.body.classList.remove('grabbing');
+        });
+
+          /* .item {
+      cursor: pointer; 
+  }*/
+  </script>
+
+</body>
+</html>
